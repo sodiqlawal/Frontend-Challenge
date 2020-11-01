@@ -1,3 +1,4 @@
+
 .home {
   padding: 2rem;
   overflow: hidden;
@@ -27,4 +28,41 @@
   gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+svg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+rect,
+circle,
+ellipse,
+polygon,
+polyline {
+  stroke-dasharray: 2100;
+  stroke-dashoffset: 2100;
+  animation: animate 2s linear forwards;
+  transition: all 2s;
+
+}
+
+@keyframes animate {
+  0% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+    fill: transparent;
+  }
+  40% {
+    stroke-dashoffset: 2100;
+    opacity: .5;
+  }
+  80% {
+    stroke-dashoffset: 4200;
+  }
+  100% {
+    stroke-dashoffset: 4200;
+    opacity: 1;
+  }
 }
