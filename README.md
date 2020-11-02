@@ -1,5 +1,5 @@
-# `Kudi Challenge`
-> Kudi challenge for drawing desired shapes
+# `Frontend Challenge`
+> Frontend challenge: Drawing shapes with svg
 
 ## install
 
