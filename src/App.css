@@ -1,4 +1,3 @@
-
 .home {
   padding: 2rem;
   overflow: hidden;
@@ -30,12 +29,6 @@
   justify-content: center;
 }
 
-svg{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 rect,
 circle,
 ellipse,
@@ -45,7 +38,6 @@ polyline {
   stroke-dashoffset: 2100;
   animation: animate 2s linear forwards;
   transition: all 2s;
-
 }
 
 @keyframes animate {
@@ -56,7 +48,7 @@ polyline {
   }
   40% {
     stroke-dashoffset: 2100;
-    opacity: .5;
+    opacity: 0.5;
   }
   80% {
     stroke-dashoffset: 4200;

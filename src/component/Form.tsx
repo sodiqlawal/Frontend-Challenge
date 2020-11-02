@@ -45,7 +45,11 @@ export function MySelect<T>(props: TMySelectProps<T>) {
         {defaultName || restProps.placeholder || ""}
       </option>
       {options.map((option) => (
-        <option key={getValue(option)} value={getValue(option)}>
+        <option
+          key={getValue(option)}
+          data-testid="select-options"
+          value={getValue(option)}
+        >
           {getName(option)}
         </option>
       ))}

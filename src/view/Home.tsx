@@ -10,16 +10,16 @@ const Home = () => {
   const [initialValues, setValues] = useState<TFormData>({
     id: 0,
     shape: null,
-    width: "300",
-    height: "150",
+    width: "200",
+    height: "100",
     radius: "100",
-    color: "",
-    borderColor: "",
+    color: "#ffffff",
+    borderColor: "#000000",
     length: "100",
     xRadius: "150",
     yRadius: "100",
     points: "",
-    sides: { name: "Three", displayName: "6" },
+    sides: { name: "Six", displayName: "6" },
     from1: "150",
     from2: "258",
     from3: "258",
@@ -69,7 +69,6 @@ const Home = () => {
     let existing: TFormData[] = JSON.parse(localStorage.getItem("data")!);
 
     setLastIndex((index) => index + 1);
-    console.log(isIndex);
     value.id = isLastIndex;
 
     existing.push(value);
@@ -128,153 +127,150 @@ const Home = () => {
         enableReinitialize
         onSubmit={() => {}}
       >
-        {({ values }) => {
-          // if (values.sides) {
-          //   updateState(values);
-          // }
-          return (
-            <div className="row">
-              <Form className="form col-md-4 col-sm-12">
-                <div className="row d-flex justify-content-center">
-                  <div className="col-md-10 col-sm-12">
-                    <label htmlFor="shape">Shapes</label>
-                    <MySelect<TShapes>
-                      name="shape"
-                      options={Object.values(shapeList)}
-                      getName={(option) => option.name}
-                      getValue={(option) => option.name}
-                      onChange={() => persistor(values)}
-                      className="custom-select field"
-                      id="shape"
-                      placeholder="Select shapes"
-                    />
-                  </div>
-                  {values.shape?.name === "Rectangle" && (
-                    <div className="col-md-10 col-sm-12 mt-2 mb-3">
-                      <label htmlFor="width">Width</label>
-                      <MyField
-                        name="width"
-                        type="number"
-                        id="width"
-                        placeholder="Input width"
-                        className="field form-control"
-                      />
-                    </div>
-                  )}
-
-                  {values.shape?.name === "Rectangle" && (
-                    <div className="col-md-10 col-sm-12 mt-2 mb-3">
-                      <label htmlFor="height">Height</label>
-                      <MyField
-                        name="height"
-                        type="number"
-                        id="height"
-                        placeholder="Input height"
-                        className="field form-control"
-                      />
-                    </div>
-                  )}
-
-                  {values.shape?.name === "Square" && (
-                    <div className="col-md-10 col-sm-12 mt-2 mb-3">
-                      <label htmlFor="length">Length</label>
-                      <MyField
-                        name="length"
-                        type="number"
-                        id="length"
-                        placeholder="Input length"
-                        className="field form-control"
-                      />
-                    </div>
-                  )}
-
-                  {values.shape?.name === "Circle" && (
-                    <div className="col-md-10 col-sm-12 mt-2 mb-3">
-                      <label htmlFor="circle">Radius</label>
-                      <MyField
-                        name="radius"
-                        type="number"
-                        id="radius"
-                        placeholder="Input radius"
-                        className="field form-control"
-                      />
-                    </div>
-                  )}
-
-                  {values.shape?.name === "Ellipse" && (
-                    <div className="col-md-10 col-sm-12 mt-2 mb-3">
-                      <label htmlFor="xRadius">X-Radius</label>
-                      <MyField
-                        name="xRadius"
-                        type="text"
-                        id="xRadius"
-                        placeholder="Input x-Radius"
-                        className="field form-control"
-                      />
-                    </div>
-                  )}
-
-                  {values.shape?.name === "Ellipse" && (
-                    <div className="col-md-10 col-sm-12 mt-2 mb-3">
-                      <label htmlFor="yRadius">Y-Radius</label>
-                      <MyField
-                        name="yRadius"
-                        type="number"
-                        id="yRadius"
-                        placeholder="Input y-Radius"
-                        className="field form-control"
-                      />
-                    </div>
-                  )}
-
-                  {["Polygon", "Polyline"].includes(values.shape?.name!) && (
-                    <div className="col-md-10 col-sm-12 mt-2 mb-3">
-                      <label htmlFor="sides">Number of sides</label>
-                      <MySelect<TPolygonSides>
-                        name="sides"
-                        options={Object.values(polygonNumbers)}
-                        getName={(option) => option.displayName}
-                        getValue={(option) => option.displayName}
-                        className="custom-select field"
-                        id="sides"
-                        placeholder="Select number of sides"
-                      />
-                    </div>
-                  )}
-
-                  {["Polygon", "Polyline"].includes(values.shape?.name!) && (
-                    <div className="row col-md-10 col-sm-12 mt-2 mb-3">
-                      <Coordinate sides={Number(values.sides?.displayName)} />
-                    </div>
-                  )}
-
-                  <div className="col-md-10 col-sm-12 mt-2 mb-3">
-                    <label htmlFor="color">Background color</label>
-                    <MyField
-                      name="color"
-                      type="color"
-                      id="color"
-                      className="field form-control"
-                    />
-                  </div>
-                  <div className="col-md-10 col-sm-12 mt-2 mb-3">
-                    <label htmlFor="borderColor">Border color</label>
-                    <MyField
-                      name="borderColor"
-                      type="color"
-                      id="borderColor"
-                      className="field form-control"
-                    />
-                  </div>
+        {({ values }) => (
+          <div className="row">
+            <Form className="form col-md-4 col-sm-12">
+              <div className="row d-flex justify-content-center">
+                <div className="col-md-10 col-sm-12">
+                  <label htmlFor="shape">Shapes</label>
+                  <MySelect<TShapes>
+                    name="shape"
+                    options={Object.values(shapeList)}
+                    getName={(option) => option.name}
+                    getValue={(option) => option.name}
+                    onChange={() => persistor(values)}
+                    className="custom-select field"
+                    id="shape"
+                    data-testid="shapes"
+                    placeholder="Select shapes"
+                  />
                 </div>
-              </Form>
-              <div className="view-shape col-md-8 col-sm-12">
-                <Svg values={values} />
+                {values.shape?.name === "Rectangle" && (
+                  <div className="col-md-10 col-sm-12 mt-2 mb-3">
+                    <label htmlFor="width">Width</label>
+                    <MyField
+                      name="width"
+                      type="number"
+                      id="width"
+                      placeholder="Input width"
+                      className="field form-control"
+                    />
+                  </div>
+                )}
+
+                {values.shape?.name === "Rectangle" && (
+                  <div className="col-md-10 col-sm-12 mt-2 mb-3">
+                    <label htmlFor="height">Height</label>
+                    <MyField
+                      name="height"
+                      type="number"
+                      id="height"
+                      placeholder="Input height"
+                      className="field form-control"
+                    />
+                  </div>
+                )}
+
+                {values.shape?.name === "Square" && (
+                  <div className="col-md-10 col-sm-12 mt-2 mb-3">
+                    <label htmlFor="length">Length</label>
+                    <MyField
+                      name="length"
+                      type="number"
+                      id="length"
+                      placeholder="Input length"
+                      data-testid="length"
+                      className="field form-control"
+                    />
+                  </div>
+                )}
+
+                {values.shape?.name === "Circle" && (
+                  <div className="col-md-10 col-sm-12 mt-2 mb-3">
+                    <label htmlFor="circle">Radius</label>
+                    <MyField
+                      name="radius"
+                      type="number"
+                      id="radius"
+                      placeholder="radius"
+                      className="field form-control"
+                    />
+                  </div>
+                )}
+
+                {values.shape?.name === "Ellipse" && (
+                  <div className="col-md-10 col-sm-12 mt-2 mb-3">
+                    <label htmlFor="xRadius">X-Radius</label>
+                    <MyField
+                      name="xRadius"
+                      type="text"
+                      id="xRadius"
+                      placeholder="Input x-Radius"
+                      className="field form-control"
+                    />
+                  </div>
+                )}
+
+                {values.shape?.name === "Ellipse" && (
+                  <div className="col-md-10 col-sm-12 mt-2 mb-3">
+                    <label htmlFor="yRadius">Y-Radius</label>
+                    <MyField
+                      name="yRadius"
+                      type="number"
+                      id="yRadius"
+                      placeholder="Input y-Radius"
+                      className="field form-control"
+                    />
+                  </div>
+                )}
+
+                {["Polygon", "Polyline"].includes(values.shape?.name!) && (
+                  <div className="col-md-10 col-sm-12 mt-2 mb-3">
+                    <label htmlFor="sides">Number of sides</label>
+                    <MySelect<TPolygonSides>
+                      name="sides"
+                      options={Object.values(polygonNumbers)}
+                      getName={(option) => option.displayName}
+                      getValue={(option) => option.displayName}
+                      className="custom-select field"
+                      id="sides"
+                      placeholder="Select number of sides"
+                    />
+                  </div>
+                )}
+
+                {["Polygon", "Polyline"].includes(values.shape?.name!) && (
+                  <div className="row col-md-10 col-sm-12 mt-2 mb-3">
+                    <Coordinate sides={Number(values.sides?.displayName)} />
+                  </div>
+                )}
+
+                <div className="col-md-10 col-sm-12 mt-2 mb-3">
+                  <label htmlFor="color">Background color</label>
+                  <MyField
+                    name="color"
+                    type="color"
+                    id="color"
+                    className="field form-control"
+                  />
+                </div>
+                <div className="col-md-10 col-sm-12 mt-2 mb-3">
+                  <label htmlFor="borderColor">Border color</label>
+                  <MyField
+                    name="borderColor"
+                    type="color"
+                    id="borderColor"
+                    className="field form-control"
+                  />
+                </div>
               </div>
-              {persistCurrent(values)}
+            </Form>
+            <div className="view-shape col-md-8 col-sm-12">
+              <Svg values={values} />
             </div>
-          );
-        }}
+            {persistCurrent(values)}
+          </div>
+        )}
       </Formik>
     </div>
   );
