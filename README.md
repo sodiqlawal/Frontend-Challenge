@@ -1,6 +1,15 @@
-# Getting Started with Create React App
+# `Kudi Challenge`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
+
+> Kudi challenge for drawing desired shapes
+
+## install
+
+```bash
+npm install formik bootstrap
+npm install --save-dev @testing-library/react
+```
 
 ## Available Scripts
 
@@ -8,39 +17,48 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Runs the app in the development mode.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
 
-### `npm run build`
+## Intro
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This challenge helps to draw your desired shapes
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Shapes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Their is a field with options for different shapes
 
-### `npm run eject`
+`NOTE: These shapes are initially drawn but can be redraw to your taste`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Usage
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1
+Rectangle
+`has fields for selecting width and height`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2
+Square
+`has a field for selecting lenght `
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3
+Circle
+`has a field for selecting radius`
 
-## Learn More
+4
+Ellipse
+`has fields for selecting x-radius and y-radius`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5
+Polygon and Polyline
+`has a field for selecting number of shapes which then determine the number of coordinates to be input for setting the attr *points*`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+####
+
+NOTE: points is used by polygon and polyline. It contain a set of coordinates differentiated by comma _,_, e.g for a 3-sided polygon,
+
+```
+<polygon points= '25 10, 10 40, 40 40' />
+```

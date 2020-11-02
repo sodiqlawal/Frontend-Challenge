@@ -53,7 +53,5 @@ describe("Kudi Challenge", () => {
     });
 
     expect(options[5].value).toBe("Polyline");
-
-    debug();
   });
 });
