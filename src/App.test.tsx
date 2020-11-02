@@ -22,7 +22,7 @@ describe("Kudi Challenge", () => {
   });
 
   test("should respond to changes", async () => {
-    const { getAllByTestId, debug } = render(<App />);
+    const { getAllByTestId } = render(<App />);
 
     let options = getAllByTestId("select-options") as HTMLSelectElement[];
     fireEvent.change(options[0], {
