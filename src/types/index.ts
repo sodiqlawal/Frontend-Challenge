@@ -1,16 +1,3 @@
-export const typeDefs = `
-directive @cacheControl(maxAge: Int, scope: CacheControlScope) on FIELD_DEFINITION | OBJECT | INTERFACE
-enum CacheControlScope {
-  PUBLIC
-  PRIVATE
-}
-"""
-The \`Upload\` scalar type represents a file upload promise that resolves an
-object containing \`stream\`, \`filename\`, \`mimetype\` and \`encoding\`.
-"""
-scalar Upload
-`;
-
 export interface TShapes {
   name: "Rectangle" | "Square" | "Circle" | "Ellipse" | "Polygon" | "Polyline";
   displayName: string;

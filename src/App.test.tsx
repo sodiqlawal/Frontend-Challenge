@@ -1,18 +1,13 @@
 import React from "react";
 import { render, fireEvent, waitFor, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import { ApolloMockedProvider } from "./test-util/Provider";
 import App from "./App";
 
 describe("Kudi Challenge", () => {
   afterEach(cleanup);
 
   test("check if local storage is initially null", async () => {
-    const { getByPlaceholderText } = render(
-      <ApolloMockedProvider>
-        <App />
-      </ApolloMockedProvider>
-    );
+    const { getByPlaceholderText } = render(<App />);
 
     const selectShape = getByPlaceholderText("Select shapes");
     const data = JSON.parse(localStorage.getItem("currentData")!);
@@ -27,13 +22,9 @@ describe("Kudi Challenge", () => {
   });
 
   test("should respond to changes", async () => {
-    const { getAllByTestId, debug } = render(
-      <ApolloMockedProvider>
-        <App />
-      </ApolloMockedProvider>
-    );
+    const { getAllByTestId, debug } = render(<App />);
 
-    let options = getAllByTestId("select-options");
+    let options = getAllByTestId("select-options") as HTMLSelectElement[];
     fireEvent.change(options[0], {
       target: { value: "Rectangle" },
     });
