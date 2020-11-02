@@ -1,4 +1,5 @@
 # `Frontend Challenge`
+
 > Frontend challenge: Drawing shapes with svg
 
 ## install
@@ -24,13 +25,17 @@ Launches the test runner in the interactive watch mode.
 
 This challenge helps to draw your desired shapes
 
-## Shapes
+### Shapes
 
 Their is a field with options for different shapes
 
 `NOTE: These shapes are initially drawn but can be redraw to your taste`
 
-### Usage
+### Colors
+
+You can set both background and border color
+
+## Usage
 
 1
 Rectangle
@@ -59,6 +64,11 @@ NOTE: points is used by polygon and polyline. It contain a set of coordinates di
 ```
 <polygon points= '25 10, 10 40, 40 40' />
 ```
+
+## For Contact
+
+Email: `sodiqlawal95@gmail.com`
+Phone Number: `08138476992`
 
 ## Netlify Link
 
