@@ -62,6 +62,6 @@ NOTE: points is used by polygon and polyline. It contain a set of coordinates di
 
 ## Netlify Link
 
-You can checkout this challenge at[cosmiconfig](https://svg-challenge.netlify.app)
+You can checkout this challenge by clicking on [Link](https://svg-challenge.netlify.app)
 
 Enjoy!
