@@ -59,3 +59,9 @@ NOTE: points is used by polygon and polyline. It contain a set of coordinates di
 ```
 <polygon points= '25 10, 10 40, 40 40' />
 ```
+
+## Netlify Link
+
+You can checkout this challenge at[cosmiconfig](https://svg-challenge.netlify.app)
+
+Enjoy!
